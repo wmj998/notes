@@ -31,6 +31,16 @@ psql
 
 ```
 select * from pg_tables;
+
+select * from pg_tables where schemaname = 'public';
+```
+
+
+
+## 查看数据表结构
+
+```
+\d table_name
 ```
 
 
@@ -40,4 +50,3 @@ select * from pg_tables;
 ```
 \q
 ```
-
