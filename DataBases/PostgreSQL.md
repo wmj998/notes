@@ -50,3 +50,22 @@ select * from pg_tables where schemaname = 'public';
 ```
 \q
 ```
+
+
+
+
+
+```
+# 启动，停止，重启服务
+systemctl start|stop|restart postgresql-9.4.service
+
+# 查看一个服务的状态
+systemctl status postgresql-9.4.service
+
+# 开机是，否启动服务
+systemctl enable|disable postgresql-9.4.service
+
+# 查看服务是否开机启动
+systemctl is-enabled postgresql-9.4.service
+```
+
