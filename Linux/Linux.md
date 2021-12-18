@@ -10,7 +10,7 @@ vi 命令
 
 nano 命令
 
-![image-20210422133517011](images\image-20210422133517011.png)
+![image-20210422133517011](images/image-20210422133517011.png)
 
 
 
@@ -32,11 +32,11 @@ chmod 命令，修改文件的权限和文件的属性
 |    x     | 可执行 |    1     |
 |    -     |  删除  |    0     |
 
-```
+```shell
 chmod a=rwx a.py
 ```
 
-```
+```shell
 chmod 777 b.py
 ```
 
@@ -44,7 +44,7 @@ chown 命令，将指定文件的拥有者改为指定的用户或组
 
 chown 命令需要root权限
 
-```
+```shell
 sudo chown root a.py
 ```
 
@@ -86,7 +86,7 @@ find 命令，查找文件或目录
 
 ###  安装编译工具及库文件
 
-> ```
+> ```shell
 > yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
 > ```
 
@@ -96,37 +96,37 @@ PCRE 作用是让 Nginx 支持重写功能
 
 > 1. 下载 PCRE 安装包
 >
->    ```
+>    ```shell
 >    cd /usr/local/src/
 >    ```
 >
->    ```
+>    ```shell
 >    wget http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz
 >    ```
 >
 > 2. 解压安装包
 >
->    ```
+>    ```shell
 >    tar zxvf pcre-8.35.tar.gz
 >    ```
 >
 > 3. 编译安装
 >
->    ```
+>    ```shell
 >    cd pcre-8.35
 >    ```
 >
->    ```
+>    ```shell
 >    ./configure
 >    ```
 >
->    ```
+>    ```shell
 >    make && make install
 >    ```
 >
 > 4. 查看 PCRE 版本
 >
->    ```
+>    ```shell
 >    pcre-config --version
 >    ```
 
@@ -134,37 +134,37 @@ PCRE 作用是让 Nginx 支持重写功能
 
 > 1. 下载 Nginx
 >
->    ```
+>    ```shell
 >    cd /usr/local/src/
 >    ```
 >
->    ```
+>    ```shell
 >    wget http://nginx.org/download/nginx-1.6.2.tar.gz
 >    ```
 >
 > 2. 解压安装包
 >
->    ```
+>    ```shell
 >    tar zxvf nginx-1.6.2.tar.gz
 >    ```
 >
 > 3. 编译安装
 >
->    ```
+>    ```shell
 >    cd nginx-1.6.2
 >    ```
 >
->    ```
+>    ```shell
 >    ./configure --prefix=/usr/local/webserver/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre-8.35
 >    ```
 >
->    ```
+>    ```shell
 >    make && make install
 >    ```
 >
 > 4. 查看nginx版本
 >
->    ```
+>    ```shell
 >    /usr/local/webserver/nginx/sbin/nginx -v
 >    ```
 
@@ -172,47 +172,47 @@ PCRE 作用是让 Nginx 支持重写功能
 
 > 创建 Nginx 运行使用的用户 www
 >
-> ```
+> ```shell
 > /usr/sbin/groupadd www 
 > ```
 >
-> ```
+> ```shell
 > /usr/sbin/useradd -g www www
 > ```
 >
 > 配置 nginx.conf 文件
 >
-> ```
+> ```shell
 > /usr/local/webserver/nginx/conf/nginx.conf
 > ```
 >
 > 检查配置文件 nginx.conf 的正确性
 >
-> ```
+> ```shell
 > /usr/local/webserver/nginx/sbin/nginx -t
 > ```
 
 ### 启动 Nginx
 
-> ```
+> ```shell
 > /usr/local/webserver/nginx/sbin/nginx
 > ```
 >
 > 查看进程
 >
-> ```
+> ```shell
 > ps -ef|grep nginx
 > ```
 >
-> ![image-20210423132520891](images\image-20210423132520891.png)
+> ![image-20210423132520891](images/image-20210423132520891.png)
 
 ### 访问站点
 
-![image-20210423133011029](images\image-20210423133011029.png)
+![image-20210423133011029](images/image-20210423133011029.png)
 
 ### 停止 Nginx
 
-```
+```shell
 /usr/local/webserver/nginx/sbin/nginx -s stop 
 ```
 
