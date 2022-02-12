@@ -59,15 +59,18 @@ https://cloud.tencent.com/developer/article/1447179
 ```shell
 yum -y install gcc
 yum -y install zlib*
-yum -y install readline-devel
+yum -y install libffi-devel
+yum -y install openssl-devel
+# yum -y install readline-devel
 
 wget https://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz
 tar -zxvf Python-3.8.10.tgz
 cd Python-3.8.10
 
 ------------------------------------------------------------------------------------
-mkdir -p /usr/local/python3.8
-./configure --prefix=/usr/local/python3.8
+# mkdir -p /usr/local/python3.8
+# ./configure --prefix=/usr/local/python3.8
+./configure
 make && make install
 
 ln -s /usr/local/python3.8/bin/python3 /usr/bin/python3
